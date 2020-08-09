@@ -15,7 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <Button
         android:id="@+id/btn_general"
@@ -24,7 +25,8 @@
         android:text="@string/general"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="184dp" />
+        tools:layout_editor_absoluteY="184dp"
+        android:onClick="general"/>
 
     <Button
         android:id="@+id/btn_food_beverage"
@@ -33,7 +35,8 @@
         android:text="@string/food_beverage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="277dp" />
+        tools:layout_editor_absoluteY="277dp"
+        android:onClick="FB"/>
 
     <Button
         android:id="@+id/btn_rating"
@@ -42,7 +45,8 @@
         android:text="@string/rating"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="103dp" />
+        tools:layout_editor_absoluteY="103dp"
+        android:onClick="Rating"/>
 
     <Button
         android:id="@+id/btn_feedback"
@@ -51,6 +55,7 @@
         android:text="@string/feedback"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="372dp" />
+        tools:layout_editor_absoluteY="372dp"
+        android:onClick="feedback"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

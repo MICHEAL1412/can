@@ -38,10 +38,10 @@
     <item android:title="Help">
 
         <menu>
-            <item android:id="@+id/sub_faq"
+            <item android:id="@+id/nav_faq"
                 android:title="FAQ"
                 />
-            <item android:id="@+id/sub_policy"
+            <item android:id="@+id/nav_policy"
                 android:title="Policy"
                 />
         </menu>

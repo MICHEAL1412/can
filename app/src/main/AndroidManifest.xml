@@ -12,8 +12,6 @@
         <activity android:name=".Feedback"></activity>
         <activity android:name=".food_beverage" />
         <activity android:name=".General" />
-        <activity android:name=".Policy" />
-        <activity android:name=".Faq" />
         <activity android:name=".rating" />
         <activity
             android:name=".MainActivity"

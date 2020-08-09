@@ -1,7 +1,9 @@
 package com.example.test1;
 
 import android.content.Intent;
+import android.media.Rating;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
@@ -24,6 +26,7 @@ import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
+    private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,43 +46,42 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(savedInstanceState==null){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FaqFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_faq);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new PolicyFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_policy);
         }
-        Button btn_rating =findViewById(R.id.btn_rating);
-        Button btn_general =findViewById(R.id.btn_general);
-        Button btn_food_beverage=findViewById(R.id.btn_food_beverage);
-        Button btn_feedback=findViewById(R.id.btn_feedback);
-        btn_rating.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                activity_rating();
-            }
-        });
-        btn_general.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View view) {
-                activity_general();
-            }
-        });
-        btn_food_beverage.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View view) {
-                activity_food_beverage();
-            }
-        });
-        btn_feedback.setOnClickListener(new View.OnClickListener() {
+    }
+    public void Rating(View view) {
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, rating.class);
+        startActivity(intent);
 
-            @Override
-            public void onClick(View view) {
-                activity_feedback();
-            }
-        });
+    }
+    public void general(View view) {
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, General.class);
+        startActivity(intent);
+
+    }
+    public void FB(View view) {
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, food_beverage.class);
+        startActivity(intent);
+
+    }
+    public void feedback(View view) {
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, Feedback.class);
+        startActivity(intent);
 
     }
 
+
     private void activity_rating() {
-        Intent intent=new Intent(this,Policy.class);
+        Intent intent=new Intent(this, rating.class);
         startActivity(intent);
     }
 
@@ -115,6 +117,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch(item.getItemId()){
             case R.id.nav_home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFragment()).commit();
+                break;
+            case R.id.nav_faq:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FaqFragment()).commit();
+                break;
+            case R.id.nav_policy:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new PolicyFragment()).commit();
                 break;
         }
         return false;
