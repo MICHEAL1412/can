@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new PolicyFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_policy);
         }
-
-
     }
+
+
     public void Rating(View view) {
         Log.d(LOG_TAG, "Button clicked!");
         Intent intent = new Intent(this, rating.class);
@@ -80,6 +80,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
+    private void activity_feedback () {
+        Intent intent=new Intent(this, FaqFragment.class);
+        startActivity(intent);
+    }
     private void activity_rating() {
         Intent intent=new Intent(this, rating.class);
         startActivity(intent);
@@ -95,10 +99,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(intent);
     }
 
-    private void activity_feedback() {
-        Intent intent=new Intent(this,Feedback.class);
-        startActivity(intent);
-    }
+
 
 
     @Override

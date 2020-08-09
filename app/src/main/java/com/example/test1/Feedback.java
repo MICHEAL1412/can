@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class Feedback extends AppCompatActivity {
 
@@ -11,5 +12,9 @@ public class Feedback extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
         Intent intent = getIntent();
+    }
+
+    public void onPreview(View view){
+        finish();
     }
 }
