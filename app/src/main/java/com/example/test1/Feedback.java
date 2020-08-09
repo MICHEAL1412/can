@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class Feedback extends AppCompatActivity {
 
@@ -21,5 +22,9 @@ public class Feedback extends AppCompatActivity {
         ///////////////////////////////////////////
         // This is close page
         finish();
+    }
+    public void displayToast(View view) {
+       Toast toast=Toast.makeText(this,R.string.toast_message,Toast.LENGTH_SHORT);
+       toast.show();
     }
 }
