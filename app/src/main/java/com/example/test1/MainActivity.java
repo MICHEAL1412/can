@@ -27,6 +27,7 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
+    static final String STATE_FRAGMENT = "state_of_fragment";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     private void activity_feedback () {
-        Intent intent=new Intent(this, FaqFragment.class);
+        Intent intent=new Intent(this, Feedback.class);
         startActivity(intent);
     }
     private void activity_rating() {

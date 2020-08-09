@@ -14,7 +14,12 @@ public class Feedback extends AppCompatActivity {
         Intent intent = getIntent();
     }
 
-    public void onPreview(View view){
+    public void back1(View view){
+        // This is go new page
+        /*Intent intent = new Intent(SecondActivity.this, MainActivity.class);
+        startActivity(intent);*/
+        ///////////////////////////////////////////
+        // This is close page
         finish();
     }
 }
