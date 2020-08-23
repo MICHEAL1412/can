@@ -108,4 +108,22 @@
     <string name="title_coming_soon">Coming Soon</string>
     <string name="title_popular">Popular</string>
     <string name="feedback">Feedback</string>
+    <string name="now_showing">Now Showing</string>
+    <string name="popular">Popular</string>
+    <string name="coming_soon">Coming Soon</string>
+<string name="Now_showing">Now Showing</string>
+    <string name="Popular">Popular</string>
+    <string name="Coming_soon">Coming Soon</string>
+    <string name="pop">Pop</string>
+    <string name="blood">Bloodahat</string>
+    <string name="blooda">Bloodahot</string>
+    <string name="fant">Fantasy Island</string>
+    <string name="onward">Onward</string>
+    <string name="baby">Baba Yaga</string>
+    <string name="digimon">Digimon Adventure-Last
+        Evolution Kizuna</string>
+    <string name="hitman">Hitman</string>
+    <string name="antebellum">Antebellum</string>
+    <string name="mulan">Mulan 2020</string>
+    <string name="tenet">Tenet</string>
 </resources>

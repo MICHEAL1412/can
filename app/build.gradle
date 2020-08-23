@@ -37,4 +37,17 @@ dependencies {
 
     android.defaultConfig.vectorDrawables.useSupportLibrary=true
 
+    // add the Firebase
+    implementation 'com.google.firebase:firebase-analytics:17.4.4'
+    implementation 'com.google.firebase:firebase-database:17.0.0'
+    implementation 'com.firebaseui:firebase-ui-database:2.2.0'
+    implementation 'com.google.firebase:firebase-auth:19.3.2'
+    implementation 'com.google.firebase:firebase-firestore:21.5.0'
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.google.firebase:firebase-messaging:20.2.3'
+
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }

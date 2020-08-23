@@ -9,17 +9,14 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/movie"
-            android:title="@string/menu_movie">
-
-            <menu>
+            android:title="@string/menu_movie"
+            android:visibility="gone">
                 <item android:id="@+id/sub_coming_soon"
                     android:title="Coming Soon"/>
                 <item android:id="@+id/sub_now_showing"
                     android:title="Now showing"/>
                 <item android:id="@+id/sub_popular"
                     android:title="Popular"/>
-            </menu>
-
         </item>
     </group>
     <item android:title="Customer">
