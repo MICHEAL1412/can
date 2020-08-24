@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context=".HomeFragment">
+    tools:context=".Homepage">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -26,56 +26,64 @@
             android:background="@color/colorAccent" />
     </LinearLayout>
 
+    <!-- Popular -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="250dp"
         android:onClick="Pop"
         android:text="@string/Popular"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginLeft="59dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginRight="72dp"
         android:onClick="Now"
         android:text="@string/Now_showing"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/Popular"
         app:layout_constraintEnd_toStartOf="@+id/textView3"
-        app:layout_constraintStart_toEndOf="@+id/textView" />
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
+        android:layout_marginStart="190dp"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginRight="49dp"
         android:onClick="coming"
         android:text="@string/Coming_soon"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/Popular"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView2" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.555" />
 
-    <!-- Popular -->
     <LinearLayout
         android:id="@+id/Popular"
         android:layout_width="0dp"
@@ -109,7 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/blooda"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColor="@android:color/white"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -134,7 +142,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/fant"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColor="@android:color/white"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -157,7 +165,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/onward"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColor="@android:color/white"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -176,7 +184,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/more"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColor="@android:color/white"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -220,7 +228,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/baby"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColor="@android:color/white"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -244,7 +252,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/digimon"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColor="@android:color/white"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -267,9 +275,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hitman"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColor="@android:color/white"
                 android:textSize="20sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="91dp"
             android:layout_height="wrap_content"
@@ -279,12 +288,13 @@
             android:layout_marginBottom="0dp"
             android:background="@color/colorAccent"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/textView23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/more3"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColor="@android:color/white"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -324,7 +334,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/antebellum"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColor="@android:color/white"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -348,7 +358,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/mulan"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColor="@android:color/white"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -372,7 +382,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/tenet"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColor="@android:color/white"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -385,12 +395,13 @@
             android:layout_marginBottom="0dp"
             android:background="@color/colorAccent"
             android:orientation="vertical">
+
             <TextView
-                android:id="@+id/textView23"
+                android:id="@+id/textView100"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/more3"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColor="@android:color/white"
                 android:textSize="20sp" />
         </LinearLayout>
 

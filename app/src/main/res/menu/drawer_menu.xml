@@ -6,7 +6,8 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/home"
-            android:title="@string/menu_home" />
+            android:title="@string/menu_home"
+            android:onClick="HomePage"/>
         <item
             android:id="@+id/movie"
             android:title="@string/menu_movie"

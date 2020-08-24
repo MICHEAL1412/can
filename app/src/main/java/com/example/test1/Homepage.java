@@ -1,16 +1,14 @@
 package com.example.test1;
 
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
@@ -19,21 +17,18 @@ import androidx.viewpager2.widget.ViewPager2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class Homepage extends AppCompatActivity {
     LinearLayout Popular,Coming_soon,Now_showing;
     private ViewPager2 viewPager2;
     private Handler sliderHandler = new Handler();
-
-    public HomeFragment(ViewPager2 viewPager2) {
-        this.viewPager2 = viewPager2;
-    }
-
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Popular = (LinearLayout) Popular.findViewById(R.id.Popular);
-        Coming_soon = (LinearLayout) Coming_soon.findViewById(R.id.Coming_soon);
-        Now_showing= (LinearLayout) Now_showing.findViewById(R.id.Now_showing);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        viewPager2=findViewById(R.id.viewPagerImageSlider);
+        Popular = (LinearLayout)findViewById(R.id.Popular);
+        Coming_soon = (LinearLayout)findViewById(R.id.Coming_soon);
+        Now_showing= (LinearLayout)findViewById(R.id.Now_showing);
         List<SliderItem> sliderItems=new ArrayList<>();
         sliderItems.add(new SliderItem(R.drawable.digimon_adventure___last_evolution_kizuna));
         sliderItems.add(new SliderItem(R.drawable.my_hero_academia___heros_rising));
@@ -69,7 +64,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        return inflater.inflate(R.layout.fragment_home,container,false);
     }
     public void Pop(View view){
         Popular.setVisibility(View.VISIBLE);
@@ -95,17 +89,19 @@ public class HomeFragment extends Fragment {
     };
 
     @Override
-    public void onPause(){
+    protected void onPause(){
         super.onPause();
         sliderHandler.removeCallbacks(sliderRunnable);
     }
 
-
-
     @Override
-    public void onResume(){
+    protected void onResume(){
         super.onResume();
         sliderHandler.postDelayed(sliderRunnable,3000);
     }
+
+
+
+
 
 }

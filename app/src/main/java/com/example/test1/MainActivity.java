@@ -2,9 +2,11 @@ package com.example.test1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -14,11 +16,23 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.CompositePageTransformer;
+import androidx.viewpager2.widget.MarginPageTransformer;
+import androidx.viewpager2.widget.ViewPager2;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
     static final String STATE_FRAGMENT = "state_of_fragment";
+
+    LinearLayout Popular,Coming_soon,Now_showing;
+    ViewPager2 viewPager2;
+    private Handler sliderHandler = new Handler();
+
 
 
     @Override
@@ -36,9 +50,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle= new ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+
         if(savedInstanceState==null){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFragment(viewPager2)).commit();
-            navigationView.setCheckedItem(R.id.nav_home);
+
+
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FaqFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_faq);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new PolicyFragment()).commit();
@@ -48,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     }
+
+
 
     public void Rating(View view) {
         Log.d(LOG_TAG, "Button clicked!");
@@ -73,7 +91,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(intent);
 
     }
+    public void HomePage(View view) {
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, Homepage.class);
+        startActivity(intent);
 
+    }
+
+    private void homepage() {
+        Intent intent=new Intent(this, Feedback.class);
+        startActivity(intent);
+    }
 
     private void activity_feedback () {
         Intent intent=new Intent(this, Feedback.class);
@@ -111,9 +139,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
-            case R.id.nav_home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFragment(viewPager2)).commit();
-                break;
             case R.id.nav_faq:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FaqFragment()).commit();
                 break;
