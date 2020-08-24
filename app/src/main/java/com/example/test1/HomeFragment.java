@@ -23,6 +23,11 @@ public class HomeFragment extends Fragment {
     LinearLayout Popular,Coming_soon,Now_showing;
     private ViewPager2 viewPager2;
     private Handler sliderHandler = new Handler();
+
+    public HomeFragment(ViewPager2 viewPager2) {
+        this.viewPager2 = viewPager2;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
