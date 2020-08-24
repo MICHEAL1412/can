@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
+
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -16,24 +16,12 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.CompositePageTransformer;
-import androidx.viewpager2.widget.MarginPageTransformer;
-import androidx.viewpager2.widget.ViewPager2;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
     static final String STATE_FRAGMENT = "state_of_fragment";
-
-    LinearLayout Popular,Coming_soon,Now_showing;
-    ViewPager2 viewPager2;
-    private Handler sliderHandler = new Handler();
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

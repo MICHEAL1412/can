@@ -23,8 +23,9 @@ public class Homepage extends AppCompatActivity {
     private Handler sliderHandler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent = getIntent();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.homepage);
         viewPager2=findViewById(R.id.viewPagerImageSlider);
         Popular = (LinearLayout)findViewById(R.id.Popular);
         Coming_soon = (LinearLayout)findViewById(R.id.Coming_soon);
