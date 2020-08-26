@@ -31,118 +31,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
     static final String STATE_FRAGMENT = "state_of_fragment";
 
-    LinearLayout Popular,Coming_soon,Now_showing;
-    private ViewPager2 viewPager2;
-    private Handler sliderHandler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar=findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        drawer=findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ActionBarDrawerToggle toggle= new ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        viewPager2=findViewById(R.id.viewPagerImageSlider);
-        Popular = (LinearLayout)findViewById(R.id.Popular);
-        Coming_soon = (LinearLayout)findViewById(R.id.Coming_soon);
-        Now_showing= (LinearLayout)findViewById(R.id.Now_showing);
-        List<SliderItem> sliderItems=new ArrayList<>();
-        sliderItems.add(new SliderItem(R.drawable.digimon_adventure___last_evolution_kizuna));
-        sliderItems.add(new SliderItem(R.drawable.my_hero_academia___heros_rising));
-        sliderItems.add(new SliderItem(R.drawable.hitman___agent_jun));
-        sliderItems.add(new SliderItem(R.drawable.baba_yaga___terror_of_the_dark_forest));
-        sliderItems.add(new SliderItem(R.drawable.jumanji2));
-
-        viewPager2.setAdapter(new SliderAdapter(sliderItems,viewPager2));
-
-        viewPager2.setClipToPadding(false);
-        viewPager2.setClipChildren(false);
-        viewPager2.setOffscreenPageLimit(3);
-        viewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
-
-        CompositePageTransformer compositePageTransformer=new CompositePageTransformer();
-        compositePageTransformer.addTransformer(new MarginPageTransformer(40));
-        compositePageTransformer.addTransformer(new ViewPager2.PageTransformer() {
-            @Override
-            public void transformPage(@NonNull View page, float position) {
-                float r=1-Math.abs(position);
-                page.setScaleY(0.85f + r * 0.15f);
-            }
-        });
-
-        viewPager2.setPageTransformer(compositePageTransformer);
-
-        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                sliderHandler.removeCallbacks(sliderRunnable);
-                sliderHandler.postDelayed(sliderRunnable,3000);
-            }
-        });
+        if (savedInstanceState == null) {
 
 
-        if(savedInstanceState==null){
-
-
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FaqFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FaqFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_faq);
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new PolicyFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PolicyFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_policy);
         }
 
 
-
     }
-    public void Pop(View view){
-        Popular.setVisibility(View.VISIBLE);
-        Coming_soon.setVisibility(View.GONE);
-        Now_showing.setVisibility(View.GONE);
-    }
-    public void coming(View view){
-        Popular.setVisibility(View.GONE);
-        Coming_soon.setVisibility(View.VISIBLE);
-        Now_showing.setVisibility(View.GONE);
-    }
-    public void Now(View view){
-        Popular.setVisibility(View.GONE);
-        Coming_soon.setVisibility(View.GONE);
-        Now_showing.setVisibility(View.VISIBLE);
-    }
-
-    private Runnable sliderRunnable = new Runnable() {
-        @Override
-        public void run() {
-            viewPager2.setCurrentItem(viewPager2.getCurrentItem()+1);
-        }
-    };
-
-    @Override
-    protected void onPause(){
-        super.onPause();
-        sliderHandler.removeCallbacks(sliderRunnable);
-    }
-
-    @Override
-    protected void onResume(){
-        super.onResume();
-        sliderHandler.postDelayed(sliderRunnable,3000);
-    }
-
-
-
-
-
-
-
     public void Rating(View view) {
         Log.d(LOG_TAG, "Button clicked!");
         Intent intent = new Intent(this, rating.class);
@@ -167,39 +82,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(intent);
 
     }
-    public void HomePage(View view) {
-        Log.d(LOG_TAG, "Button clicked!");
-        Intent intent = new Intent(this, Homepage.class);
-        startActivity(intent);
-
-    }
-
-    private void homepage() {
-        Intent intent=new Intent(this, Feedback.class);
-        startActivity(intent);
-    }
-
-    private void activity_feedback () {
-        Intent intent=new Intent(this, Feedback.class);
-        startActivity(intent);
-    }
-    private void activity_rating() {
-        Intent intent=new Intent(this, rating.class);
-        startActivity(intent);
-    }
-
-    private void activity_general() {
-        Intent intent=new Intent(this,General.class);
-        startActivity(intent);
-    }
-
-    private void activity_food_beverage() {
-        Intent intent=new Intent(this,food_beverage.class);
-        startActivity(intent);
-    }
-
-
-
 
     @Override
     public void onBackPressed() {
